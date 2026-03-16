@@ -58,7 +58,7 @@ const navLinks = document.querySelectorAll('.nav-menu a');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -85,9 +85,9 @@ filterBtns.forEach(btn => {
         filterBtns.forEach(b => b.classList.remove('active'));
         // Add active class to clicked button
         btn.classList.add('active');
-        
+
         const filter = btn.getAttribute('data-filter');
-        
+
         galleryItems.forEach(item => {
             if (filter === 'all' || item.getAttribute('data-category') === filter) {
                 item.classList.remove('hide');
@@ -129,14 +129,14 @@ const contactForm = document.querySelector('.contact-form form');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Get form data
     const formData = new FormData(contactForm);
-    
+
     // Here you would typically send the data to a server
     // For now, we'll just show an alert
     alert('Thank you for your message! We will get back to you soon.');
-    
+
     // Reset form
     contactForm.reset();
 });
@@ -157,7 +157,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe product cards and gallery items
-document.querySelectorAll('.product-card, .gallery-item, .contact-item').forEach(el => {
+document.querySelectorAll('.product-card, .gallery-item, .contact-item, .product-v2-card').forEach(el => {
     observer.observe(el);
 });
 
@@ -212,12 +212,12 @@ const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     if (scrollTop > 100) {
         header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
     } else {
         header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
     }
-    
+
     lastScrollTop = scrollTop;
 });
